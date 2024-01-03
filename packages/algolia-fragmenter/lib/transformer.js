@@ -36,7 +36,7 @@ const reduceFragmentsUnderHeadings = (accumulator, fragment) => {
 module.exports.fragmentTransformer = (recordAccumulator, node) => {
     let htmlFragments = Extractor
         // These are the top-level HTML elements that we keep - this results in a lot of fragments
-        .run(node.html, {cssSelector: `p,pre,td,li`})
+        .run(node.html, {cssSelector: `p,pre,td,li,.kg-callout-text`})
         // Use the utility function to merge fragments so that there is one-per-heading
         .reduce(reduceFragmentsUnderHeadings, []);
 

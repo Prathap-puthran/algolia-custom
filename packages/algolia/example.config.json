@@ -1,15 +1,15 @@
 {
   "ghost": {
-    "apiKey": "",
-    "apiUrl": ""
+    "apiKey": "63d0c8e415ecc1003d934027:e4b400a46b42efcb7e3af4b28868f519b3e86b24c65fee6d4af3be1b37e7e8bb",
+    "apiUrl": "https://mortgagelogic-news.ghost.io"
   },
   "ignore_slugs": [
     "the-slug-of-a-post-with-a-huge-amount-of-content-that-will-cause-errors"
   ],
   "algolia": {
-    "index": "",
-    "apiKey": "",
-    "appId": "",
+    "index": "mortgagelogic_prod",
+    "apiKey": "39d037ed09b0520ea74ab20fd040b3e8",
+    "appId": "LT4T9X4XCI",
     "indexSettings": {
       "distinct": true,
       "attributeForDistinct": "slug",

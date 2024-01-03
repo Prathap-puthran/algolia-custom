@@ -4,6 +4,7 @@ const ui = require('@tryghost/pretty-cli').ui;
 const fs = require('fs-extra');
 const utils = require('../lib/utils');
 const GhostContentAPI = require('@tryghost/content-api');
+// const GhostContentAPI = require('@tryghost/admin-api');
 const transforms = require('@tryghost/algolia-fragmenter');
 const IndexFactory = require('@tryghost/algolia-indexer');
 
@@ -57,10 +58,11 @@ prettyCLI.command({
         try {
             const timer = Date.now();
             const params = {limit: 'all', include: 'tags,authors'};
+            // const params = {limit: 'all', include: 'tags,authors',filter: 'status:published', formats:'html'};
             const ghost = new GhostContentAPI({
                 url: context.ghost.apiUrl,
                 key: context.ghost.apiKey,
-                version: 'canary'
+                version: 'v5.0'
             });
 
             if (argv.skip && argv.skip.length > 0) {
@@ -80,6 +82,7 @@ prettyCLI.command({
                 params.page = argv.page;
             }
 
+            // context.posts = await ghost.pages.browse(params);
             context.posts = await ghost.posts.browse(params);
 
             ui.log.info(`Done fetching posts in ${Date.now() - timer}ms.`);
